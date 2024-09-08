@@ -1,0 +1,18 @@
+Single Responsibility Principle (SRP)
+_____________________________________
+
+
+
+Robert C. Martin Describe it:-
+
+	A class should have one and only one reason to change , meaning that a
+	class sould have only one Job
+
+
+What is the Single Responsibility Principle?
+
+So, what’s this SRP thing all about? Well, think of it like this: 
+imagine you have a bunch of toys in your room. Each toy should have its own job, right? 
+Like, a ball is for bouncing, and a teddy bear is for cuddling. In programming, 
+the SRP says that each part of your code should have just one job to do. 
+It’s like keeping your toys organized so you can find them easily when you need them!
