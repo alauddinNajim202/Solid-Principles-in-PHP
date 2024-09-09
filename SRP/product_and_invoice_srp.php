@@ -10,7 +10,8 @@
 <body>
 
     <!-- Display product information -->
-     <h1 style="text-align: center;"> Single Responsibility Principle </h1>
+     <h1 style="text-align: center;"> Single Responsibility Principle Follow Every Class </h1>
+     <hr>
     <?php
         
         //  it follows the single responsibility principle 
@@ -42,6 +43,7 @@
 
             public function product_information()
             {
+                echo "<br/>";
                 echo "Product Information" . "<br/>";
                 echo "Name : " . $this->name . "<br/>";
                 echo "Color : " . $this->color . "<br/>";
@@ -71,7 +73,7 @@
                 return $this->product->get_price() * $this->quantity;
             }
 
-            public function display_calculate()  {
+            public function display_price_calculate()  {
 
                 echo "Total price :" . $this->get_total_price() . "<br/>";
                 echo "----------------------------------" . "<br/>";
@@ -82,6 +84,7 @@
 
 
         class InvoiceGenerate {
+            
             private Invoice $invoice;
             private Product $product;
 
@@ -106,6 +109,8 @@
             }
         }
 
+
+
         class InvoiceDatabase{
 
             private Invoice $invoice;
@@ -114,15 +119,11 @@
                 $this->invoice = $invoice;
             }
 
-            
-
             public function save_to_database(){
                 // Database connection code goes here
                 echo "Invoice saved to database successfully." . "<br/>";
                 echo "----------------------------------" . "<br/>";
                 echo "You can check your invoice in the database." . "<br/>";
-
-
             }
 
         }
@@ -131,7 +132,7 @@
         $product->product_information();
 
         $invoice = new Invoice($product, 5);
-        $invoice->display_calculate();
+        $invoice->display_price_calculate();
       
 
         $invoice_generate = new InvoiceGenerate($invoice, $product);

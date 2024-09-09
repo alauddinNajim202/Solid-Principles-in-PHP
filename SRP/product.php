@@ -10,7 +10,7 @@
 <body>
 
     <!-- Display product information -->
-     <h1 style="text-align: center;"> Single Responsibility Principle </h1>
+     <h1 style="text-align: center;"> Single Responsibility Principle not following  </h1>
     <?php
 
         // define product class

@@ -1,0 +1,100 @@
+n PHP, abstract classes and abstract methods are key features of Object-Oriented Programming (OOP) that allow developers to define base classes with certain methods that must be implemented by any subclass. Abstract classes can't be instantiated directly and often serve as a blueprint for other classes.
+
+Abstract Class
+An abstract class is a class that contains at least one abstract method. An abstract class cannot be instantiated directly, but it can contain both abstract and non-abstract (concrete) methods. Subclasses that extend the abstract class must implement all the abstract methods defined in the abstract class.
+
+Abstract Method
+An abstract method is a method declared in an abstract class but without a body. It only defines the method's signature (name, parameters) and forces any subclass to implement the method.
+
+Key Points:
+Abstract classes can contain both abstract and concrete methods.
+Abstract methods must be implemented in any class that inherits from the abstract class.
+Abstract classes cannot be instantiated.
+Syntax for Abstract Classes and Methods
+Declare an abstract class using the abstract keyword.
+Declare abstract methods using the abstract keyword, but do not provide a method body.
+Example: Abstract Class and Methods in PHP OOP
+php
+Copy code
+<?php
+// Abstract class definition
+abstract class Shape {
+    // Abstract method (must be implemented by child classes)
+    abstract public function calculateArea();
+
+    // Concrete method (can be used by child classes as is)
+    public function description() {
+        return "This is a shape.";
+    }
+}
+
+// Subclass extending the abstract class (Rectangle)
+class Rectangle extends Shape {
+    private $length;
+    private $width;
+
+    // Constructor to set the dimensions
+    public function __construct($length, $width) {
+        $this->length = $length;
+        $this->width = $width;
+    }
+
+    // Implementing the abstract method
+    public function calculateArea() {
+        return $this->length * $this->width;
+    }
+}
+
+// Subclass extending the abstract class (Circle)
+class Circle extends Shape {
+    private $radius;
+
+    // Constructor to set the radius
+    public function __construct($radius) {
+        $this->radius = $radius;
+    }
+
+    // Implementing the abstract method
+    public function calculateArea() {
+        return pi() * pow($this->radius, 2);
+    }
+}
+
+// Usage
+$rectangle = new Rectangle(10, 5);
+echo "Area of Rectangle: " . $rectangle->calculateArea() . "\n";  // Output: 50
+echo $rectangle->description() . "\n";  // Output: This is a shape.
+
+$circle = new Circle(7);
+echo "Area of Circle: " . $circle->calculateArea() . "\n";  // Output: Approx. 153.94
+echo $circle->description() . "\n";  // Output: This is a shape.
+?>
+
+
+Explanation:
+Abstract Class (Shape):
+
+Shape is an abstract class with one abstract method calculateArea() and one concrete method description().
+The calculateArea() method must be implemented by any class that extends Shape.
+The description() method is concrete, meaning it has a body, and subclasses can use it without overriding.
+Concrete Classes (Rectangle and Circle):
+
+Both Rectangle and Circle classes extend the abstract class Shape.
+Both classes implement the calculateArea() method, providing their own logic based on the shape.
+They also inherit the description() method from the Shape class, which they can use directly without
+needing to override it.
+Usage:
+
+The Rectangle and Circle objects are created, and their calculateArea() methods are called to compute the area
+based on the respective shape.
+The description() method is used from the abstract class to describe the shape.
+Why Use Abstract Classes?
+Abstract classes are useful when you want to define a general concept (like a "Shape") with specific rules 
+(like every shape must have a way to calculate its area). Subclasses can extend the abstract class to provide 
+their own implementations of these methods while sharing some common behavior (like the description() method in this case).
+
+Summary:
+Abstract Classes allow you to define a blueprint for other classes.
+Abstract Methods force the child classes to implement specific behavior.
+Concrete methods in abstract classes can be inherited and used by child classes.
+Let me know if you need further clarification!
