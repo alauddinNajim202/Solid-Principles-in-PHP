@@ -6,7 +6,8 @@ The Open-Closed Principle, one of the SOLID principles, states that
     should be open for extension but closed for modification. 
 
 In simpler terms, we should be able to extend the behavior
-of a class without modifying its existing code. This promotes code reusability and makes our applications more flexible 
+of a class without modifying its existing code. This promotes code reusability and makes our 
+applications more flexible 
 and easier to maintain.
 
 The Open/Closed Principle (OCP) is one of the SOLID principles of object-oriented design. It states that:
@@ -19,4 +20,5 @@ Key Idea:
 Open for Extension: You can extend the class's behavior.
 Closed for Modification: The class should not be modified when you want to add new behavior.
 Why Use the Open/Closed Principle?
-By following this principle, we reduce the risk of introducing bugs in existing code while adding new features. It promotes maintainability and flexibility in a codebase.
+By following this principle, we reduce the risk of introducing bugs in existing code while adding new features.
+It promotes maintainability and flexibility in a codebase.

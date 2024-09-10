@@ -6,7 +6,7 @@ _____________________________________
 Robert C. Martin Describe it:-
 
 	A class should have one and only one reason to change , meaning that a
-	class sould have only one Job
+	class should have only one Job
 
 
 What is the Single Responsibility Principle?

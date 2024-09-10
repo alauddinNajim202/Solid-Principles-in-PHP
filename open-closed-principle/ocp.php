@@ -10,7 +10,7 @@
 <body>
 
     <!-- Display product information -->
-    <h1 style="text-align: center;"> Open Closed Principle </h1>
+    <h1 style="text-align: center;"> Open Closed Principle not follow </h1>
     <?php
 
 
